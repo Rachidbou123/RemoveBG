@@ -3,33 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - BgRemover AI</title>
+    <title>Privacy Policy | BgRemover AI</title>
+    <meta name="robots" content="noindex, follow"> <!-- Policies generally shouldn't rank over core tools -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">BgRemover AI</a>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-        </ul>
-    </nav>
 
-    <div class="container">
-        <div class="seo-content">
-            <h1>Privacy Policy</h1>
-            <p>Last updated: June 26, 2026</p>
-            
-            <h3>1. Image Processing Privacy</h3>
-            <p>Our background removal tool operates purely on the client-side (in your browser). <strong>We do not upload, store, or view any of your images.</strong> All processing happens on your local device.</p>
-            
-            <h3>2. Third-Party Advertising (Google AdSense)</h3>
-            <p>We use Google AdSense to serve ads. Google uses cookies to serve ads based on a user's prior visits to this website or other websites. You can opt out of personalized advertising by visiting Google's Ads Settings.</p>
-            
-            <h3>3. Analytics</h3>
-            <p>We may use standard web analytics tools to track aggregate traffic and usage patterns to improve our service.</p>
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BgRemover AI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Tool</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
         </div>
-    </div>
+    </header>
+
+    <main class="main-container">
+        <article class="app-surface" style="text-align: left; padding: calc(var(--spacing-base) * 6);">
+            <h1 style="text-align: left;">Privacy Policy</h1>
+            <p class="app-subtitle" style="margin-left: 0; max-width: 100%;">Effective Date: June 26, 2026</p>
+            
+            <div class="seo-article" style="border-top: none; padding-top: 0; margin-top: calc(var(--spacing-base) * 4);">
+                <h3>1. Introduction and Data Safety</h3>
+                <p>At BgRemover AI, we prioritize your security and operational privacy. Our primary service—removing backgrounds from digital images—is engineered to process entirely locally within your device's web browser framework using WebAssembly technology.</p>
+                
+                <h3>2. No Image Storage or Uploads</h3>
+                <p>We do <strong>not</strong> collect, upload, stream, parse, or store the image files you submit to the tool. The Machine Learning inference occurs locally on your hardware. Because your files never traverse our servers, they are immune to cloud vulnerabilities and server-side data extraction.</p>
+                
+                <h3>3. Third-Party Advertising and Cookies</h3>
+                <p>To keep the service free for our global user base, we monetize the platform through Google AdSense. Third party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites.</p>
+                <ul>
+                    <li>Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to our sites and/or other sites on the Internet.</li>
+                    <li>Users may opt out of personalized advertising by visiting <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">Google Ads Settings</a>.</li>
+                </ul>
+
+                <h3>4. Log Files and Analytics</h3>
+                <p>Like standard web applications, our hosting providers securely gather standard non-personally identifiable information automatically (e.g., browser type, ISP, referring/exit pages, date/time stamps). This data analyzes trends and administers site reliability.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 BgRemover AI.</p>
+    </footer>
 </body>
 </html>
