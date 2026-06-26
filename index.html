@@ -3,73 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free AI Background Remover - High Quality Transparent PNG</title>
-    <meta name="description" content="Remove backgrounds from images instantly for free. 100% automatic, high quality, and completely private directly in your browser.">
+    <title>Free AI Background Remover | High Quality HD Cutouts</title>
+    <meta name="description" content="Remove backgrounds from images instantly for free. 100% automatic, high quality, privacy-focused tool that runs securely in your browser.">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">BgRemover AI</a>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        
-        <div class="ad-slot">
-            <p>AdSense Placeholder: Top Banner (728x90)</p>
-            </div>
-
-        <div class="app-card">
-            <h1>Remove Image Background, 100% Free</h1>
-            <p>Upload any image to automatically strip the background in HD quality.</p>
-            
-            <div class="upload-area" onclick="document.getElementById('fileInput').click()">
-                <h3 style="margin:0; color: #475569;">📸 Click or Drag Image Here</h3>
-            </div>
-            <input type="file" id="fileInput" accept="image/*">
-
-            <div class="loading" id="loader">Processing your image securely with AI...</div>
-
-            <div class="workspace" id="showcase">
-                <div class="img-box">
-                    <h4>Original Image</h4>
-                    <img id="viewOriginal" src="" alt="Original">
-                </div>
-                <div class="img-box">
-                    <h4>Result</h4>
-                    <div class="transparent-bg"><img id="viewResult" src="" alt="Transparent"></div>
-                    <a id="downloadLink" class="btn" href="#" download="transparent-hd.png">Download PNG</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="ad-slot">
-            <p>AdSense Placeholder: Responsive Display Ad</p>
-            </div>
-
-        <div class="seo-content">
-            <h2>How Our Free Background Remover Works</h2>
-            <p>Getting a transparent background used to require expensive software and hours of careful editing. Our tool leverages state-of-the-art WebAssembly AI models to detect subjects and erase backgrounds automatically. The best part? It runs entirely inside your web browser. Your photos are never uploaded to a cloud server, ensuring 100% privacy.</p>
-            
-            <h2>Key Features</h2>
-            <ul>
-                <li><strong>No Sign-up Required:</strong> Jump straight into editing without creating an account.</li>
-                <li><strong>High Quality Edges:</strong> Handles hair, fur, and complex outlines effortlessly.</li>
-                <li><strong>Unlimited Uses:</strong> We do not restrict how many images you process per day.</li>
+    <!-- Primary Navigation -->
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BgRemover AI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Tool</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
             </ul>
         </div>
-    </div>
+    </header>
 
-    <footer>
-        <p>&copy; 2026 BgRemover AI. All rights reserved.</p>
-        <a href="privacy.html">Privacy Policy</a> | <a href="about.html">About Us</a>
+    <main class="main-container">
+        
+        <!-- AdSense Display Slot 1: Top Responsive Banner -->
+        <div class="ad-slot-container">
+            <!-- Replace with AdSense Ins Tag: -->
+            Advertisement Placement
+        </div>
+
+        <!-- Web Application UI Container -->
+        <section class="app-surface">
+            <h1>Remove Image Backgrounds</h1>
+            <p class="app-subtitle">Get pixel-perfect transparent cutouts in seconds using state-of-the-art browser AI. 100% free, securely processed on your device.</p>
+
+            <!-- State: IDLE (Upload Area) -->
+            <div id="viewIdle" class="ui-state is-active">
+                <div class="dropzone" id="dropzone">
+                    <svg class="dropzone-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                    </svg>
+                    <div class="dropzone-text">Click to upload, or drag and drop</div>
+                    <div class="dropzone-hint">Supports JPG, PNG, WEBP (Max 15MB)</div>
+                </div>
+                <!-- Global Error Banner -->
+                <div id="errorBanner" class="error-banner"></div>
+            </div>
+            
+            <input type="file" id="fileInput" class="sr-only" accept="image/png, image/jpeg, image/webp">
+
+            <!-- State: PROCESSING -->
+            <div id="viewLoading" class="ui-state loading-state">
+                <div class="spinner"></div>
+                <div class="dropzone-text">Analyzing image subjects...</div>
+                <div class="dropzone-hint">Running neural network on your device securely.</div>
+            </div>
+
+            <!-- State: SUCCESS (Result Workspace) -->
+            <div id="viewResult" class="ui-state result-workspace">
+                <div class="comparison-slider" id="comparisonSlider">
+                    <img id="imgAfter" class="image-after" src="" alt="Background removed result">
+                    <img id="imgBefore" class="image-before" src="" alt="Original image">
+                    <div id="sliderHandle" class="slider-handle"></div>
+                </div>
+                
+                <a id="btnDownload" class="btn-primary" href="#" download>
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-right: 8px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    Download HD Image
+                </a>
+            </div>
+        </section>
+
+        <!-- AdSense Display Slot 2: Mid-Content Unit -->
+        <div class="ad-slot-container">
+            <!-- Replace with AdSense Ins Tag: -->
+            Advertisement Placement
+        </div>
+
+        <!-- Semantic SEO Content Engine -->
+        <article class="seo-article">
+            <h2>Professional Background Removal Without the Cost</h2>
+            <p>Graphic designers, e-commerce managers, and digital marketers routinely spend hours carefully tracing subjects using the pen tool in expensive software suites. BgRemover AI democratizes this professional workflow by leveraging advanced local Machine Learning algorithms right inside your web browser.</p>
+            
+            <h3>How Browser-Based AI Secures Your Privacy</h3>
+            <p>Unlike standard background removal platforms that force you to upload sensitive personal photos or unreleased product images to external cloud servers, our infrastructure utilizes <strong>WebAssembly (WASM)</strong>. This means the neural network model downloads directly to your device and executes the image processing locally on your own CPU/GPU hardware. Your imagery never leaves your screen, ensuring absolute data privacy and zero risk of cloud data breaches.</p>
+            
+            <h3>Precision Edge Detection</h3>
+            <p>Handling complex hair strands, fur, translucent objects, and low-contrast edges used to be impossible for automated tools. By utilizing an optimized variant of the U-2-Net architecture, BgRemover achieves high-fidelity segmentation logic, separating subjects dynamically without harsh pixelation or jagged halos.</p>
+        </article>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 BgRemover AI. Built for productivity.</p>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="mailto:hello@bgremover.example.com">Contact</a>
+        </div>
     </footer>
 
+    <!-- Initialize Application Module -->
     <script type="module" src="app.js"></script>
 </body>
 </html>
